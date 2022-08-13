@@ -45,7 +45,7 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
   let gameState = '';
   if (playerSelection === computerSelection) {
-    gameState = 'Tied!';
+    gameState = 'Tie!';
   } else if (
     (playerSelection == 'Rock' && computerSelection == 'Scissors') ||
     (playerSelection == 'Paper' && computerSelection == 'Rock') ||
