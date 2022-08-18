@@ -23,15 +23,15 @@ const disableButton = () => {
 
 function game() {
   const computerSelection = getComputerChoice();
-  let gameMessage = playRound(playerSelection, computerSelection);
-  updateScore(gameMessage);
+  let roundResult = playRound(playerSelection, computerSelection);
+  updateScore(roundResult);
   displayChoice(playerSelection, computerSelection);
   let winner = document.querySelector('.winner');
   if (playerScore == 5) {
-    winner.innerHTML = 'You win the game!';
+    winner.innerHTML = 'You Win!';
     disableButton();
   } else if (computerScore == 5) {
-    winner.innerHTML = 'You lose the game!';
+    winner.innerHTML = 'You Lose!';
     disableButton();
   }
 }
@@ -51,17 +51,17 @@ function playRound(playerSelection, computerSelection) {
     (playerSelection == 'Paper' && computerSelection == 'Rock') ||
     (playerSelection == 'Scissors' && computerSelection == 'Paper')
   ) {
-    gameState = `You win the round! ${playerSelection} beats ${computerSelection}`;
+    gameState = `You Win! ${playerSelection} beats ${computerSelection}`;
     playerScore++;
   } else {
-    gameState = `You lose the round! ${computerSelection} beats ${playerSelection}`;
+    gameState = `You Lose! ${computerSelection} beats ${playerSelection}`;
     computerScore++;
   }
   return gameState;
 }
 
-function updateScore(gameMessage) {
-  document.querySelector('.message').innerHTML = gameMessage;
+function updateScore(roundResult) {
+  document.querySelector('.result').innerHTML = roundResult;
   document.querySelector('.player').innerHTML = playerScore;
   document.querySelector('.computer').innerHTML = computerScore;
 }
