@@ -4,6 +4,10 @@ body {
   margin: 5rem;
 }
 
+button {
+  cursor: pointer;
+}
+
 .scores {
   display: flex;
   justify-content: center;
