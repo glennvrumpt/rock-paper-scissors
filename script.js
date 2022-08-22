@@ -1,7 +1,7 @@
 let playerScore = 0;
 let computerScore = 0;
-const buttons = document.querySelectorAll('.button');
 
+const buttons = document.querySelectorAll('.button');
 buttons.forEach(function (e) {
   e.addEventListener('click', function () {
     if (e === buttons[0]) {
